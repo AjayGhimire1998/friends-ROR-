@@ -1,0 +1,34 @@
+
+
+<h1>Friends List</h1>
+  <table class= "table table-striped table-bordered table-hover">
+    <thead class= "thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Facebook</th>
+        <th>User Id</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+        <tr>
+          <td><%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.facebook %></td>
+          <td><%= friend.user_id %></td>
+          <td><%= link_to 'Destroy', friend, method: :delete, class: 'btn btn-outline-danger btn-sm', data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Friend', new_friend_path, class: "btn btn-secondary" %>

@@ -1,0 +1,23 @@
+
+<div class="card" style="width: 30rem">
+  <div class="card-body">
+    <h2 class="card-title"><%= @friend.first_name %> <%= @friend.last_name %></h2>
+    <p class="card-text">
+        <strong>Email:</strong>
+        <%= @friend.email %><br>
+
+        <strong>Phone:</strong>
+        <%= @friend.phone %><br>
+
+        <strong>Facebook:</strong>
+        <%= @friend.facebook %>
+    </p>
+    <%= link_to 'Edit', edit_friend_path(@friend), class: "btn btn-primary" %> 
+    <%= link_to 'Back', friends_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+
+
+
+
